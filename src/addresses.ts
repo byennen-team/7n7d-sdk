@@ -1,0 +1,21 @@
+import type { NetworkAddresses, Network } from './types.js'
+
+export const TESTNET_ADDRESSES: NetworkAddresses = {
+  tradingVault: '0x3728F306Bc29d2A702cDb7919495E54F809405F8',
+  sevenN7DToken: '0x8D8572E3bBC1F813997b9C4503c2243CcF3f2D72',
+  usdc: '0x10297B02cFBe672267903E92deEc36Cff24C5D77',
+  profitDistributor: '0xA9dBEBd6898961cB5B3DA7BeeA9b3A1974956771',
+  governanceDAO: '0x3DE4AB52e6Aaba118aa681eC83fb7c1bC176f664',
+}
+
+export const MAINNET_ADDRESSES: NetworkAddresses = {
+  tradingVault: '0x0000000000000000000000000000000000000000',
+  sevenN7DToken: '0x0000000000000000000000000000000000000000',
+  usdc: '0x0000000000000000000000000000000000000000',
+  profitDistributor: '0x0000000000000000000000000000000000000000',
+  governanceDAO: '0x0000000000000000000000000000000000000000',
+}
+
+export function getAddresses(network: Network): NetworkAddresses {
+  return network === 'mainnet' ? MAINNET_ADDRESSES : TESTNET_ADDRESSES
+}
